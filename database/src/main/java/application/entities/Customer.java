@@ -1,4 +1,4 @@
-package application;
+package application.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -55,7 +55,7 @@ public class Customer {
     }
 
     public String toString() {
-        return "Customer { first name = " + this.preName + " last name = " + lastName + "address = " + address + "}";
+        return "Customer {id:  " + id + ", first name = " + this.preName + ", last name = " + lastName + ", address = " + address + "}";
     }
 
 }

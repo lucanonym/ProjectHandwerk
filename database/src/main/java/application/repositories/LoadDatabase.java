@@ -1,6 +1,8 @@
-package application;
+package application.repositories;
 
 
+import application.CustomerRepository;
+import application.entities.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

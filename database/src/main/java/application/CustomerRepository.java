@@ -1,5 +1,6 @@
 package application;
 
+import application.entities.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
