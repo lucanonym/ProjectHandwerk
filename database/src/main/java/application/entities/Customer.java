@@ -3,6 +3,7 @@ package application.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -11,6 +12,11 @@ public class Customer {
     private String address;
     private String preName;
     private String lastName;
+    private int phoneNumber;
+    private String salutation;
+    // TODO maybe better with links
+    private List<BuildingSite> buildingSites;
+
 
     public Customer() {
 
@@ -24,6 +30,14 @@ public class Customer {
 
     public long getId() {
         return id;
+    }
+
+    public String getSalutation() {
+        return salutation;
+    }
+
+    public void setSalutation(String salutation) {
+        this.salutation = salutation;
     }
 
     public void setId(long id) {
@@ -53,6 +67,24 @@ public class Customer {
     public void setPreName(String preName) {
         this.preName = preName;
     }
+
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public List<BuildingSite> getBuildingSites() {
+        return buildingSites;
+    }
+
+    public void setBuildingSites(List<BuildingSite> buildingSites) {
+        this.buildingSites = buildingSites;
+    }
+
+
 
     public String toString() {
         return "Customer {id:  " + id + ", first name = " + this.preName + ", last name = " + lastName + ", address = " + address + "}";
