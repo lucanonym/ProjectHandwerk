@@ -15,7 +15,6 @@ public class Customer {
     private int phoneNumber;
     private String salutation;
     // TODO maybe better with links
-    private List<BuildingSite> buildingSites;
 
 
     public Customer() {
@@ -74,14 +73,6 @@ public class Customer {
 
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public List<BuildingSite> getBuildingSites() {
-        return buildingSites;
-    }
-
-    public void setBuildingSites(List<BuildingSite> buildingSites) {
-        this.buildingSites = buildingSites;
     }
 
 
