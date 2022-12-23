@@ -1,7 +1,5 @@
-package application;
+package application.utilities;
 
-
-import application.utilities.CustomerNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

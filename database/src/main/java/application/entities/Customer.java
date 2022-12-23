@@ -3,22 +3,24 @@ package application.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
 public class Customer {
 
-    private @Id @GeneratedValue long id;
+    private @Id @GeneratedValue
+    long id;
     private String address;
     private String preName;
     private String lastName;
     private int phoneNumber;
     private String salutation;
-    // TODO maybe better with links
+    @OneToMany
+    private List<BuildingSite> buildingSite;
 
 
     public Customer() {
-
     }
 
     public Customer(String preName, String lastName, String address) {
@@ -74,8 +76,6 @@ public class Customer {
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
-
 
     public String toString() {
         return "Customer {id:  " + id + ", first name = " + this.preName + ", last name = " + lastName + ", address = " + address + "}";
