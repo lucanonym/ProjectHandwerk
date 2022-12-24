@@ -7,25 +7,30 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class BuildingSite {
+public class BuildingSite implements GenericEntity<BuildingSite> {
 
     private @Id @GeneratedValue long id;
-    private Date startDate;
+    private int date;
 
-
-    public long getId() {
+    @Override
+    public long getID() {
         return id;
+    }
+
+    @Override
+    public void update(BuildingSite site) {
+        this.date = site.getDate();
     }
 
     public void setId(long id) {
         this.id = id;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public int getDate() {
+        return date;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setStartDate(int date) {
+        this.date = date;
     }
 }

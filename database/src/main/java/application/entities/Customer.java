@@ -7,7 +7,7 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class Customer {
+public class Customer implements GenericEntity<Customer>{
 
     private @Id @GeneratedValue
     long id;
@@ -29,7 +29,16 @@ public class Customer {
         this.address = address;
     }
 
-    public long getId() {
+    @Override
+    public void update(Customer customer) {
+        this.lastName = customer.getLastName();
+        this.address = customer.getAddress();
+        this.preName = customer.getPreName();
+        this.phoneNumber = customer.getPhoneNumber();
+        this.salutation = customer.getSalutation();
+    }
+    @Override
+    public long getID() {
         return id;
     }
 
