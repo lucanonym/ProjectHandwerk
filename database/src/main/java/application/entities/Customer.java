@@ -9,8 +9,8 @@ import java.util.List;
 @Entity
 public class Customer implements GenericEntity<Customer>{
 
-    private @Id @GeneratedValue
-    long id;
+    private @Id @GeneratedValue long id;
+    private long sales;
     private String address;
     private String preName;
     private String lastName;

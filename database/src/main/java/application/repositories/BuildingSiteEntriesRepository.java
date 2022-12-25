@@ -1,8 +1,11 @@
 package application.repositories;
 
 
-import application.entities.BuildingSiteEntries;
+import application.entities.BuildingSiteEntry;
+import org.springframework.stereotype.Repository;
 
 
-public interface BuildingSiteEntriesRepository extends GenericRepository<BuildingSiteEntries> {
+@Repository
+public interface BuildingSiteEntriesRepository extends GenericRepository<BuildingSiteEntry> {
+
 }

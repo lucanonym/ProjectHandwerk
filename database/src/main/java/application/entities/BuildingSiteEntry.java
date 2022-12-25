@@ -6,9 +6,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class BuildingSiteEntries implements GenericEntity<BuildingSiteEntries> {
+public class BuildingSiteEntry implements GenericEntity<BuildingSiteEntry> {
 
     private @Id @GeneratedValue long id;
+
+
+
+
+
+
+
+
+
+
+
     @Override
     public long getID() {
         return id;
@@ -17,7 +28,9 @@ public class BuildingSiteEntries implements GenericEntity<BuildingSiteEntries> {
     public void setId(long id) {
         this.id = id;
     }
-    public void update(BuildingSiteEntries entrie) {
+
+    @Override
+    public void update(BuildingSiteEntry entrie) {
         //TODO add attributes and implement method
         throw new UnsupportedOperationException();
     }
