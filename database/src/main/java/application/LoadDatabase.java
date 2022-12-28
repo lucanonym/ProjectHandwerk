@@ -15,15 +15,9 @@ public class LoadDatabase {
     private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 
     @Bean
-    CommandLineRunner initDatabase(CustomerRepository customerRepository) {
+    CommandLineRunner initDatabase() {
         return args -> {
-            log.info("Preloading Customer-----------------------------------------------");
-            log.info("Preloading -----------------------------------------------");
-            log.info("----------------------------------------------------------");
-            log.info("Customers in DataBase:");
-            //if (customerRepository.findAll().isEmpty()) log.error("Nothing preloaded");
-            //customerRepository.findAll().forEach(customer -> log.info(customer.toString()));
-
+            log.info("Nothing initialised!");
         };
     }
 }
