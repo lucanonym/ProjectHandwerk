@@ -2,6 +2,8 @@ package application.entities;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Project {
@@ -10,15 +12,17 @@ public class Project {
     private String name;
     private int startDate;
     private String address;
-
+    @OneToMany(mappedBy = "site")
+    List<ProjectEntry> projectEntries;
     @ManyToOne
     Customer customer;
 
-    public Project(Customer customer, String name, int startDate, String address) {
+    public Project(Customer customer, String name, int startDate, String address, List<ProjectEntry> projectEntries) {
         this.customer = customer;
         this.name = name;
         this.startDate = startDate;
         this.address = address;
+        this.projectEntries = new ArrayList<>(projectEntries);
 
     }
 
@@ -51,15 +55,10 @@ public class Project {
         this.name = name;
     }
 
-    public long getID() {
-        return id;
-    }
-
 
     public void update(Project site) {
         this.startDate = site.getStartDate();
         this.address = site.getAddress();
-        this.id = site.getID();
 
     }
 

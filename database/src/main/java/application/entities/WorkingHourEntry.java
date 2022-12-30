@@ -2,8 +2,15 @@ package application.entities;
 
 import application.utilities.ChangeNotPossibleException;
 
+
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 import java.sql.Date;
 
+
+@Entity
+@DiscriminatorValue("WORKING")
 public class WorkingHourEntry extends ProjectEntry {
 
     public static final String CAST_NOT_POSSIBLE = "%s could not be changed to %s %n";
@@ -11,10 +18,16 @@ public class WorkingHourEntry extends ProjectEntry {
     private double amountOfHours;
     private double wage;
 
-    public WorkingHourEntry(Date date, String description, Project project) {
+    public WorkingHourEntry(Date date, String description, Project project, double wage, double amountOfHours) {
         setDate(date);
         setDescription(description);
         setSite(project);
+        this.amountOfHours = amountOfHours;
+        this.wage = wage;
+    }
+
+    public WorkingHourEntry() {
+
     }
 
     @Override

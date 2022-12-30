@@ -2,8 +2,13 @@ package application.entities;
 
 import application.utilities.ChangeNotPossibleException;
 
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 import java.sql.Date;
 
+@Entity
+@DiscriminatorValue("MATERIAL")
 public class MaterialEntry extends ProjectEntry {
 
     public static final String CAST_NOT_POSSIBLE = "%s could not be changed to %s %n";
@@ -11,10 +16,16 @@ public class MaterialEntry extends ProjectEntry {
     private Unit unit;
     private String name;
 
-    public MaterialEntry(Date date, String description, Project project) {
-        this.setDate(date);
+    public MaterialEntry() {
+
+    }
+
+    public MaterialEntry(Date date, String description, Project project, Unit unit, String name) {
+        setDate(date);
         setDescription(description);
         setSite(project);
+        this.unit = unit;
+        this.name = name;
     }
 
     @Override
